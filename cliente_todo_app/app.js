@@ -4,7 +4,10 @@
  */
 
 // URL Base del servidor Backend de la Actividad 5
-const API_URL = "http://127.0.0.1:8000/tareas";
+// ANTES (Local):
+// const API_URL = "http://localhost:8000/equipos";
+
+const API_URL = "https://api-adso-grupo-x-tania-fernanda-trujillo.onrender.com/tareas";
 
 // Elementos del DOM
 const formTarea = document.getElementById("form-tarea");
