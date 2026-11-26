@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Tareas - SENA ADSO</title>
+    <!-- Estilos CSS Personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1><i class="fa-solid fa-list-check"></i> Gestor de Tareas Asíncrono</h1>
+            <p>Integración Full-Stack: JavaScript (Fetch) + FastAPI + MongoDB</p>
+        </header>
+
+        <!-- Formulario de Creación -->
+        <section class="card form-card">
+            <h2><i class="fa-solid fa-plus-circle"></i> Nueva Tarea</h2>
+            <form id="form-tarea">
+                <div class="form-group">
+                    <label for="titulo">Título de la Tarea <span class="required">*</span></label>
+                    <input type="text" id="titulo" placeholder="Ej. Implementar endpoints asíncronos" required minlength="3" maxlength="150">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" rows="3" placeholder="Ej. Definir las llamadas Fetch en app.js" maxlength="500"></textarea>
+                </div>
+
+                <button type="submit" id="btn-guardar" class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Guardar Tarea
+                </button>
+            </form>
+        </section>
+
+        <!-- Lista de Tareas y Feedback Visual -->
+        <section class="card list-card">
+            <div class="list-header">
+                <h2><i class="fa-solid fa-tasks"></i> Mis Tareas</h2>
+                <span id="contador-tareas" class="badge">0 Tareas</span>
+            </div>
+
+            <!-- Indicadores Visuales de Estado -->
+            <div id="loading-spinner" class="status-message hidden">
+                <i class="fa-solid fa-spinner fa-spin"></i> Cargando tareas desde MongoDB...
+            </div>
+
+            <div id="error-message" class="status-message error-box hidden">
+                <i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con la API RESTful.
+            </div>
+
+            <!-- Contenedor dinámico de tareas -->
+            <div id="contenedor-tareas" class="tareas-grid">
+                <!-- Se poblará dinámicamente mediante JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Script de Integración con el Backend -->
+    <script src="app.js"></script>
+</body>
+</html>
